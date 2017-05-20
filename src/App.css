@@ -1,0 +1,50 @@
+.container {
+  width: 960px;
+}
+body {
+  background-color: black;
+}
+.board-style {
+  float: left;
+  width: 500px;
+}
+.board-info {
+  width: 220px;
+  height: 500px;
+  background-color: #ffcc66;
+  float: left;
+}
+.board-frame {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+.card-style {
+  background-color: #ff9900;
+}
+.card-logo {
+  width: 100%;
+}
+
+
+/* Header CSS */
+/*.header-logo {
+  margin-left: 30px;
+}
+.header-link {
+  margin-right: 20px;
+}
+.nav-top {
+  margin-top: 15px;
+}*/
+
+/* Sign-in CSS */
+/*.sign-form{
+  margin-top: 25px;
+}
+.form-control {
+  opacity: 0.55;
+}
+.form-control:focus {
+  opacity: 0.75;
+}*/
