@@ -12,6 +12,7 @@ import reduxThunk from 'redux-thunk';
 
 // load in app component
 import App from './App';
+import Board from './board';
 
 // load in created reducers
 import reducers from './reducers';
@@ -24,6 +25,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory} >
       <Route path="/" component={App}>
+        <Route path="game" component={Board} />
       </Route>
     </Router>
   </Provider>,

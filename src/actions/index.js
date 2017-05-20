@@ -1,24 +1,30 @@
 import axios from 'axios';
-import { browserHistory } from 'react-router';
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_MESSAGE } from './types';
+// import { browserHistory } from 'react-router';
+import { FETCH_TEST } from './types';
 
 // url location of the server
-const ROOT_URL = 'http://localhost:5000';
+const ROOT_URL = 'https://monopoly-api.mybluemix.net/';
 // make sure server is on when trying to call it!
 
+export function testApi() {
+  return function(dispatch) {
+    console.log("sending test calls...");
+    axios.get(`${ROOT_URL}`)
+      .then(response => {
+        dispatch({type: FETCH_TEST});
+        // localStorage.setItem('token', response.data.token);
+        // browserHistory.push('/feature');
+        console.log(response);
+      })
+      .catch(response => {
+        // show error
+        // dispatch(authError(response.response.data.error))
+      });
+  }
+}
+
+
 /*
-  as action creator always return an object
-  that object is an action
-  that action has a type
-  but sometime it return a function,
-
-  by using redux thunk we can retun a function from action creator
-  that function has access to dispatch
-  the dispatch accepts the actions and forwards it to all the reducers
-
-  redux thunk is great with async functions
-*/
-
 // sign in user creator function, will to attached to sign component
 export function signinUser({email,password}) {
   // submit email/password to server
@@ -47,6 +53,7 @@ export function authError(error) {
     payload: error
   }
 };
+*/
 
 /*
 // sign up user
