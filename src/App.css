@@ -1,23 +1,23 @@
 .container {
-  width: 1200px;
+  width: 960px;
 }
 body {
-  background-color: black;
+  background-color: white;
 }
+.board-frame {
+  padding: 10px;
+}
+
 .board-style {
-  float: left;
-  width: 600px;
+  background-color: white;
+  width: 450px;
+  height: 450px;
+  text-align: center;
 }
 .board-info {
   width: 280px;
   height: 600px;
   background-color: #ffcc66;
-  float: left;
-}
-.board-frame {
-  padding: 10px;
-  margin: auto;
-  text-align: center;
 }
 .card-style {
   background-color: #ff9900;
@@ -34,4 +34,14 @@ body {
 .roll-btn {
   padding: 10px;
   height: 60px;
+}
+
+.street-style {
+  width: 50px;
+  height: 80px;
+}
+.street-block {
+  width: 77px;
+  height: 80px;
+  background-color: grey;
 }
