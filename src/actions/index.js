@@ -44,10 +44,11 @@ export function rollApi() {
   return function(dispatch) {
     axios.get(`${ROLL_URL}`)
       .then(response => {
+        console.log(response.data.result);
+        alert(response.data.result);
         axios.get(`${BOARD_URL}`)
           .then(response => {
             dispatch({
-              // console.log(response.data);
               type: BOARD_TEST,
               payload: response.data
             });
