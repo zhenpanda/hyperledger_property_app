@@ -17,20 +17,57 @@ class Board extends Component {
 
           <div className="board-frame col-xs-8">
 
-            <div className="board-style">
+            <div className="board-style z-depth-3">
 
-              <img className="street-block" src={require('../assets/images/cut_board/board_cut_design_01.png')} />
-              <img className="street-row" src={require('../assets/images/cut_board/board_cut_design_02.png')} />
-              <img className="street-block" src={require('../assets/images/cut_board/board_cut_design_03.png')} />
+              <img className="street-block hoverable" src={require('../assets/images/cut_board/board_cutted_01.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_02.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_03.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_04.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_05.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_06.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_07.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_08.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_09.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_10.png')} />
+              <img className="street-block hoverable" src={require('../assets/images/cut_board/board_cutted_11.png')} />
 
-              <img className="street-hor" src={require('../assets/images/cut_board/board_cut_design_04.png')} />
-              <img className="street-center" src={require('../assets/images/cut_board/board_cut_design_05.png')} />
-              <img className="street-hor" src={require('../assets/images/cut_board/board_cut_design_06.png')} />
+              <div className="street-hor">
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_12.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_15.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_17.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_19.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_21.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_23.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_25.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_27.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_29.png')} />
+              </div>
 
-              <img className="street-block" src={require('../assets/images/cut_board/board_cut_design_07.png')} />
-              <img className="street-row" src={require('../assets/images/cut_board/board_cut_design_08.png')} />
-              <img className="street-block" src={require('../assets/images/cut_board/board_cut_design_09.png')} />
+              <img className="street-center hoverable" src={require('../assets/images/cut_board/board_cutted_13.png')} />
 
+              <div className="street-hor">
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_14.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_16.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_18.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_20.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_22.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_24.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_26.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_28.png')} />
+                <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_30.png')} />
+              </div>
+
+              <img className="street-block hoverable" src={require('../assets/images/cut_board/board_cutted_31.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_32.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_33.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_34.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_35.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_36.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_37.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_38.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_39.png')} />
+              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_40.png')} />
+              <img className="street-block hoverable" src={require('../assets/images/cut_board/board_cutted_41.png')} />
 
             </div>
           </div>
@@ -42,11 +79,11 @@ class Board extends Component {
 
                 <div className="card-content">
                   <span className="card-title">
-                  <img className="card-logo card-panel light-green" src={require('../assets/images/logo.png')} />
+                  <img className="card-logo card-panel light-green hoverable" src={require('../assets/images/logo.png')} />
                   </span>
 
                   <div className="player-stats">
-                    <div className="card-content card-panel blue lighten-1">
+                    <div className="card-content card-panel blue lighten-1 hoverable">
 
                       <table>
                         <thead>
@@ -76,7 +113,7 @@ class Board extends Component {
 
           </div>
 
-          <div className="card-logo card-panel red accent-2 player-plate">
+          <div className="card-logo card-panel red accent-2 player-plate hoverable">
             <span className="player-name flow-text">Player 1</span>
           </div>
 
