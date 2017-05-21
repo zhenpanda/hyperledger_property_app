@@ -1,6 +1,15 @@
 .container {
   width: 960px;
 }
+
+.start-btn {
+  margin-top: 10px;
+}
+.start-text{
+  font-size: 18px;
+  color: pink;
+}
+
 body {
   background-color: white;
 }
