@@ -8,7 +8,7 @@ import * as actions from './actions/index';
 class Board extends Component {
   rollDice(){
     this.props.rollApi();
-    alert("Sending roll request to HyberLedger please wait...");
+    alert("Sending roll request to Hyperledger please wait...");
   }
   getBoard() {
     this.props.boardApi();
@@ -96,7 +96,7 @@ class Board extends Component {
 
   playerOneBuy() {
     this.props.buyApi();
-    alert("Sending buy request to HyberLedger please wait...")
+    alert("Sending buy request to Hyperledger please wait...")
   }
 
   componentWillMount() {
