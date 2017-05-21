@@ -6,7 +6,7 @@ import { FETCH_TEST, BOARD_TEST } from './types';
 const ROOT_URL = 'https://monopoly-api.mybluemix.net/';
 const INIT_URL = 'https://monopoly-api.mybluemix.net/board';
 
-const BOARD_URL = 'http://monopoly-api.mybluemix.net/board';
+const BOARD_URL = 'https://monopoly-api.mybluemix.net/board';
 
 // make sure server is on when trying to call it!
 export function testApi() {
