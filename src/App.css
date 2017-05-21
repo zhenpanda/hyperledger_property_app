@@ -5,22 +5,21 @@ body {
   background-color: white;
 }
 .board-frame {
-  padding: 10px;
+  padding-top: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .board-style {
-  background-color: white;
-  width: 450px;
-  height: 450px;
+  /*background-color: grey;*/
+  width: 600px;
+  height: 600px;
   text-align: center;
 }
 .board-info {
   width: 280px;
-  height: 600px;
+  height: 660px;
   background-color: #ffcc66;
-}
-.card-style {
-  background-color: #ff9900;
 }
 .card-logo {
   width: 100%;
@@ -35,13 +34,40 @@ body {
   padding: 10px;
   height: 60px;
 }
+.card-top {
+  margin-top: 10px;
+}
 
-.street-style {
-  width: 50px;
+.street-row {
+  width: 450px;
   height: 80px;
+  float: left;
 }
 .street-block {
-  width: 77px;
+  width: 74px;
   height: 80px;
-  background-color: grey;
+  float: left;
+}
+.street-hor {
+  width: 74px;
+  height: 450px;
+  float: left;
+}
+.street-center {
+  width: 450px;
+  height: 450px;
+  float: left;
+}
+
+.player {
+  margin: 10px;
+  height: 120px;
+}
+.player-plate {
+  margin: auto;
+  font-size: 8px;
+  text-align: center;
+  width: 55%;
+}
+.player-name {
 }
