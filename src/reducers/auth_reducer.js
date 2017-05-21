@@ -1,5 +1,5 @@
 // import from action types
-import { FETCH_TEST } from '../actions/types';
+import { FETCH_TEST,BOARD_TEST } from '../actions/types';
 
 // determent how stat should be returned when action is called
 export default function(state = {}, action) {
@@ -7,9 +7,9 @@ export default function(state = {}, action) {
     case FETCH_TEST:
       return {...state, message: action.payload};
     case BOARD_TEST:
-      return {...state, board: action.payload };
+      // console.log("this is action...", action);
+      return {...state, current_board: action.payload };
   };
-
   return state;
 };
 

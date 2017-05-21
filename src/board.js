@@ -6,10 +6,6 @@ import PlayerTwoIcon from './player_two_icon';
 import * as actions from './actions/index';
 
 class Board extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleClickRoll() {
     this.props.testApi();
   }
@@ -17,12 +13,34 @@ class Board extends Component {
     this.props.boardApi();
   }
 
+  getHash() {
+    if (this.props.board.current_board) {
+      return(
+        <span>{this.props.board.current_board.txhash}</span>
+      )
+    }
+  }
+  getBalancePlayerOne() {
+    if (this.props.board.current_board) {
+      return(
+        <span>{this.props.board.current_board.player1.balance}</span>
+      )
+    }
+  }
+  getBalancePlayerTwo() {
+    if (this.props.board.current_board) {
+      return(
+        <span>{this.props.board.current_board.player2.balance}</span>
+      )
+    }
+  }
+
   componentWillMount() {
     this.props.boardApi();
   }
 
   render() {
-    console.log('props in App', this.props);
+    console.log('props in App', this.props.board);
     return (
       <div>
         <div className="row">
@@ -105,7 +123,7 @@ class Board extends Component {
                       <div className="collection hash-panel">
                         <a href="#!" className="collection-item">
                           <span className="">
-                            Tx 64a1220d-162e-4141-9786-59f806b5884bs
+                            {this.getHash()}
                           </span>
                         </a>
                       </div>
@@ -120,11 +138,11 @@ class Board extends Component {
                         <tbody>
                           <tr>
                             <td>1</td>
-                            <td>$</td>
+                            <td>${this.getBalancePlayerOne()}</td>
                           </tr>
                           <tr>
                             <td>2</td>
-                            <td>$5000</td>
+                            <td>${this.getBalancePlayerTwo()}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -176,7 +194,7 @@ class Board extends Component {
 
 // mapstate to props, actions returns into state
 function mapStateToProps(state) {
-  return { board: state.board }
+  return { board: state.auth }
 }
 
 export default connect(mapStateToProps, actions)(Board);

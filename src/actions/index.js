@@ -31,9 +31,11 @@ export function boardApi() {
     console.log("reading game board...");
     axios.get(`${BOARD_URL}`)
       .then(response => {
-        dispatch({type: BOARD_TEST});
-        console.log(response.data);
-        return response.data;
+        dispatch({
+          // console.log(response.data);
+          type: BOARD_TEST,
+          payload: response.data
+        });
       })
       .catch(response => {
       });
