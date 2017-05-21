@@ -88,12 +88,33 @@ body {
 }
 
 .player {
-  margin: 10px;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
   height: 120px;
+  background-color: white;
 }
 .player-plate {
   margin: auto;
   font-size: 8px;
   text-align: center;
   width: 55%;
+}
+.plays-action {
+  float: left;
+}
+.btn-img {
+  width: 42px;
+  height: 42px;
+}
+.btn-roll {
+  width: 60px;
+  height: 42px;
+}
+
+.player-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  position: fixed;
 }

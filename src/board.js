@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PlayerOneIcon from './player_one_icon';
+import PlayerTwoIcon from './player_two_icon';
 
 import * as actions from './actions/index';
 
@@ -19,8 +21,14 @@ class Board extends Component {
 
             <div className="board-style z-depth-3">
 
-              <img className="street-block hoverable" src={require('../assets/images/cut_board/board_cutted_01.png')} />
-              <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_02.png')} />
+              <div className="hoverable">
+                <img className="street-block" src={require('../assets/images/cut_board/board_cutted_01.png')} />
+              </div>
+
+              <div className="hoverable">
+                <img className="street-stick" src={require('../assets/images/cut_board/board_cutted_02.png')} />
+              </div>
+
               <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_03.png')} />
               <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_04.png')} />
               <img className="street-stick hoverable" src={require('../assets/images/cut_board/board_cutted_05.png')} />
@@ -43,7 +51,7 @@ class Board extends Component {
                 <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_29.png')} />
               </div>
 
-              <img className="street-center hoverable" src={require('../assets/images/cut_board/board_cutted_13.png')} />
+              <img className="street-center" src={require('../assets/images/cut_board/board_cutted_13.png')} />
 
               <div className="street-hor">
                 <img className="street-shelf hoverable" src={require('../assets/images/cut_board/board_cutted_14.png')} />
@@ -118,14 +126,25 @@ class Board extends Component {
           </div>
 
             <div className="row">
-              <div className="card-content card-panel player pink lighten-4">
+              <div className="card-content card-panel player">
 
-                  <div className="plays-action">
+                  <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect waves-light btn roll-btn" onClick={() => this.handleClickRoll()}  src={require('../assets/images/dice_red.png')} />
+                      <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.handleClickRoll()}  src={require('../assets/images/dice_red.png')} />
+                    </div>
                   </div>
 
-              </div>
+                  <div className="plays-action hoverable">
+                    <div className="btn-style">
+                      <img className="waves-effect waves-light btn roll-btn btn-img" src={require('../assets/images/bag.png')} />
+                    </div>
+                  </div>
+
+                  <div className="plays-action hoverable">
+                    <div className="btn-style">
+                      <img className="waves-effect pink lighten-4 btn roll-btn btn-img" src={require('../assets/images/go.png')} />
+                    </div>
+                  </div>
 
               </div>
             </div>
