@@ -33,7 +33,7 @@ body {
 }
 .board-info {
   width: 280px;
-  height: 660px;
+  height: 720px;
   background-color: #ffcc66;
 }
 .card-logo {
@@ -85,6 +85,11 @@ body {
 }
 .street-normal {
   background-color: rgb(204, 255, 204);
+}
+
+.hash-panel {
+  font-size: 12px;
+  background-color: white;
 }
 
 .player {

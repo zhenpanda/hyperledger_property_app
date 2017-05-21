@@ -6,13 +6,23 @@ import PlayerTwoIcon from './player_two_icon';
 import * as actions from './actions/index';
 
 class Board extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   handleClickRoll() {
-    // signinUser from actions
-    // console.log(this.props);
-    this.props.testApi()
+    this.props.testApi();
+  }
+  getBoard() {
+    this.props.boardApi();
+  }
+
+  componentWillMount() {
+    this.props.boardApi();
   }
 
   render() {
+    console.log('props in App', this.props);
     return (
       <div>
         <div className="row">
@@ -24,7 +34,6 @@ class Board extends Component {
               <div className="hoverable">
                 <img className="street-block" src={require('../assets/images/cut_board/board_cutted_01.png')} />
               </div>
-
               <div className="hoverable">
                 <img className="street-stick" src={require('../assets/images/cut_board/board_cutted_02.png')} />
               </div>
@@ -93,6 +102,14 @@ class Board extends Component {
                   <div className="player-stats">
                     <div className="card-content card-panel blue lighten-1 hoverable">
 
+                      <div className="collection hash-panel">
+                        <a href="#!" className="collection-item">
+                          <span className="">
+                            Tx 64a1220d-162e-4141-9786-59f806b5884bs
+                          </span>
+                        </a>
+                      </div>
+
                       <table>
                         <thead>
                           <tr>
@@ -103,7 +120,7 @@ class Board extends Component {
                         <tbody>
                           <tr>
                             <td>1</td>
-                            <td>$2500</td>
+                            <td>$</td>
                           </tr>
                           <tr>
                             <td>2</td>
@@ -121,8 +138,8 @@ class Board extends Component {
 
           </div>
 
-          <div className="card-logo card-panel red accent-2 player-plate hoverable">
-            <span className="player-name flow-text">Player 1</span>
+          <div className="red accent-2 player-plate hoverable">
+            <span className="player-name flow-text" onClick={() => this.getBoard()} >Player1</span>
           </div>
 
             <div className="row">
@@ -157,9 +174,9 @@ class Board extends Component {
   }
 }
 
-
 // mapstate to props, actions returns into state
 function mapStateToProps(state) {
-  return { };
+  return { board: state.board }
 }
+
 export default connect(mapStateToProps, actions)(Board);

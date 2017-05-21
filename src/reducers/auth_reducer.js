@@ -5,7 +5,9 @@ import { FETCH_TEST } from '../actions/types';
 export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_TEST:
-      return {...state, message: action.payload}
+      return {...state, message: action.payload};
+    case BOARD_TEST:
+      return {...state, board: action.payload };
   };
 
   return state;
