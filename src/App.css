@@ -88,8 +88,10 @@ body {
 }
 
 .hash-panel {
-  font-size: 12px;
+  font-size: 10px;
   background-color: white;
+  word-wrap: break-word;
+  line-height: 1.25;
 }
 
 .player {
@@ -117,9 +119,178 @@ body {
   height: 42px;
 }
 
+.refresh {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* Player Positions */
 .player-icon {
-  width: 50px;
-  height: 50px;
-  margin: 0;
-  position: fixed;
+  position: absolute;;
+}
+.pos-one{
+  top: 540px;
+  left: 530px;
+}
+.pos-two{
+  top: 540px;
+  left: 470px;
+}
+.pos-three{
+  top: 540px;
+  left: 420px;
+}
+.pos-four{
+  top: 540px;
+  left: 370px;
+}
+.pos-five{
+  top: 540px;
+  left: 320px;
+}
+.pos-six{
+  top: 540px;
+  left: 270px;
+}
+.pos-seven{
+  top: 540px;
+  left: 220px;
+}
+.pos-eight{
+  top: 540px;
+  left: 170px;
+}
+.pos-nine{
+  top: 540px;
+  left: 120px;
+}
+.pos-ten{
+  top: 540px;
+  left: 70px;
+}
+.pos-11 {
+  top: 540px;
+  left: 10px;
+}
+.pos-12 {
+  top: 476px;
+  left: 10px;
+}
+.pos-13 {
+  top: 476px;
+  left: 10px;
+}
+.pos-14 {
+  top: 412px;
+  left: 10px;
+}
+.pos-15 {
+  top: 412px;
+  left: 10px;
+}
+.pos-16 {
+  top: 328px;
+  left: 10px;
+}
+.pos-17 {
+  top:284px;
+  left: 10px;
+}
+.pos-18 {
+  top:220px;
+  left: 10px;
+}
+.pos-19 {
+  top:156px;
+  left: 10px;
+}
+.pos-20 {
+  top:92px;
+  left: 10px;
+}
+.pos-20 {
+  top:92px;
+  left: 10px;
+}
+.pos-21 {
+  top: 12px;
+  left: 70px;
+}
+.pos-22 {
+  top: 12px;
+  left: 120px;
+}
+.pos-23 {
+  top: 12px;
+  left: 170px;
+}
+.pos-24 {
+  top: 12px;
+  left: 230px;
+}
+.pos-25 {
+  top: 12px;
+  left: 280px;
+}
+.pos-26 {
+  top: 12px;
+  left: 330px;
+}
+.pos-27 {
+  top: 12px;
+  left: 380px;
+}
+.pos-28 {
+  top: 12px;
+  left: 420px;
+}
+.pos-29 {
+  top: 12px;
+  left: 480px;
+}
+.pos-30 {
+  top: 12px;
+  left: 530px;
+}
+.pos-31 {
+  top: 12px;
+  left: 530px;
+}
+.pos-32 {
+  top:92px;
+  left: 530px;
+}
+.pos-33 {
+  top:156px;
+  left: 530px;
+}
+.pos-34 {
+  top:220px;
+  left: 530px;
+}
+.pos-35 {
+  top:284px;
+  left: 530px;
+}
+.pos-36 {
+  top: 348px;
+  left: 530px;
+}
+.pos-37 {
+  top: 412px;
+  left: 530px;
+}
+.pos-38 {
+  top: 412px;
+  left: 530px;
+}
+.pos-39 {
+  top: 476px;
+  left: 530px;
+}
+.pos-40 {
+  top: 540px;
+  left: 530px;
 }
