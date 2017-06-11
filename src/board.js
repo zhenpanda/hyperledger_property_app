@@ -7,13 +7,22 @@ import {Spinner,pendingTasksReducer,pendingTask,begin,end} from 'react-redux-spi
 import * as actions from './actions/index';
 
 class Board extends Component {
-  rollDice(){
-    this.props.rollApi();
-    // alert("Sending roll request to Hyperledger please wait...");
-  }
   getBoard() {
     this.props.boardApi();
   }
+  rollDice(inputPlayer){
+    // alert("Sending roll request to Hyperledger please wait...");
+    console.log(inputPlayer);
+    this.props.rollApi(inputPlayer);
+  }
+  playerOneBuy(inputPlayer) {
+    this.props.buyApi(inputPlayer);
+    // alert("Sending buy request to Hyperledger please wait...")
+  }
+  playerPass(inputPlayer){
+    this.props.passApi(inputPlayer);
+  }
+
   renderPlayerPlayer1() {
     if (this.props.board.current_board) {
       let pos = this.props.board.current_board.player1.currentPosition.id;
@@ -139,6 +148,19 @@ class Board extends Component {
       )
     }
   }
+  getTurn() {
+    if (this.props.board.current_board) {
+      if (this.props.board.current_board.currentTurn == "player1") {
+        return(
+          <div className="player-turn-1">{this.props.board.current_board.currentTurn}</div>
+        )
+      }else if (this.props.board.current_board.currentTurn == "player2") {
+        return(
+          <div className="player-turn-2">{this.props.board.current_board.currentTurn}</div>
+        )
+      }
+    }
+  }
   getBalancePlayerOne() {
     if (this.props.board.current_board) {
       return(
@@ -154,17 +176,13 @@ class Board extends Component {
     }
   }
 
-  playerOneBuy() {
-    this.props.buyApi();
-    // alert("Sending buy request to Hyperledger please wait...")
-  }
-
+  // INIT
   componentWillMount() {
-    this.props.boardApi();
+    this.getBoard();
   }
 
   render() {
-    console.log('rendering props in App', this.props.board);
+    console.log('rendering props in App', this.props.board.current_board);
     // alert("Updating....");
     return (
       <div>
@@ -173,7 +191,7 @@ class Board extends Component {
         <div className="row">
 
           <div className="board-frame col-xs-8">
-
+            <div>Current Turn: {this.getTurn()}</div>
             <div className="board-style z-depth-3">
               <div className="player-icon">
                 {this.renderPlayerPlayer2()}
@@ -301,17 +319,17 @@ class Board extends Component {
               <div className="card-content card-panel player1">
                   <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.rollDice()}  src={require('../assets/images/dice_red.png')} />
+                      <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.rollDice("P1")}  src={require('../assets/images/dice_red.png')} />
                     </div>
                   </div>
                   <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect waves-light btn roll-btn btn-img" onClick={() => this.playerOneBuy()} src={require('../assets/images/bag.png')} />
+                      <img className="waves-effect waves-light btn roll-btn btn-img" onClick={() => this.playerOneBuy("P1")} src={require('../assets/images/bag.png')} />
                     </div>
                   </div>
                   <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect pink lighten-4 btn roll-btn btn-img" src={require('../assets/images/go.png')} />
+                      <img className="waves-effect pink lighten-4 btn roll-btn btn-img" onClick={() => this.playerPass("P1")} src={require('../assets/images/go.png')} />
                     </div>
                   </div>
               </div>
@@ -322,17 +340,17 @@ class Board extends Component {
               <div className="card-content card-panel player2">
                   <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.rollDice()}  src={require('../assets/images/dice_red.png')} />
+                      <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.rollDice("P2")}  src={require('../assets/images/dice_red.png')} />
                     </div>
                   </div>
                   <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect waves-light btn roll-btn btn-img" onClick={() => this.playerOneBuy()} src={require('../assets/images/bag.png')} />
+                      <img className="waves-effect waves-light btn roll-btn btn-img" onClick={() => this.playerOneBuy("P2")} src={require('../assets/images/bag.png')} />
                     </div>
                   </div>
                   <div className="plays-action hoverable">
                     <div className="btn-style">
-                      <img className="waves-effect pink lighten-4 btn roll-btn btn-img" src={require('../assets/images/go.png')} />
+                      <img className="waves-effect pink lighten-4 btn roll-btn btn-img" onClick={() => this.playerPass("P2")} src={require('../assets/images/go.png')} />
                     </div>
                   </div>
               </div>

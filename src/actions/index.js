@@ -52,16 +52,37 @@ export function boardApi() {
   }
 }
 
-export function rollApi() {
+export function rollApi(inputPlayer) {
   return function(dispatch) {
-    dispatch({
-      type: FETCH_BOARD,
-      [ pendingTask ]: begin
-    });
-    axios.get(`${ROLL_URL}`)
+    console.log(inputPlayer, "action dispatcher");
+    if (inputPlayer==="P1") {
+      dispatch({
+        type: FETCH_BOARD,
+        [ pendingTask ]: begin
+      });
+      axios.get(`${ROLL_URL}`)
       .then(response => {
         // alert(response.data.result);
         axios.get(`${BOARD_URL}`)
+        .then(response => {
+          dispatch({
+            type: BOARD_TEST,
+            [ pendingTask ]: end,
+            payload: response.data
+          });
+        })
+      })
+      .catch(response => {
+      });
+    } else if(inputPlayer==="P2") {
+        dispatch({
+          type: FETCH_BOARD,
+          [ pendingTask ]: begin
+        });
+        axios.get(`${ROLL_URL_PLAYER2}`)
+        .then(response => {
+          // alert(response.data.result);
+          axios.get(`${BOARD_URL}`)
           .then(response => {
             dispatch({
               type: BOARD_TEST,
@@ -69,26 +90,97 @@ export function rollApi() {
               payload: response.data
             });
           })
-      })
-      .catch(response => {
-      });
+        })
+        .catch(response => {
+        });
+    }
   }
 }
 
-export function buyApi() {
+export function buyApi(inputPlayer) {
   return function(dispatch) {
-    axios.get(`${BUY_URL}`)
+    if (inputPlayer==="P1") {
+      dispatch({
+        type: FETCH_BOARD,
+        [ pendingTask ]: begin
+      });
+      axios.get(`${BUY_URL}`)
       .then(response => {
         // alert(response.data.result);
         axios.get(`${BOARD_URL}`)
-          .then(response => {
-            dispatch({
-              type: BOARD_TEST,
-              payload: response.data
-            });
-          })
+        .then(response => {
+          dispatch({
+            type: BOARD_TEST,
+            [ pendingTask ]: end,
+            payload: response.data
+          });
+        })
       })
       .catch(response => {
       });
+    }else if (inputPlayer==="P2") {
+      dispatch({
+        type: FETCH_BOARD,
+        [ pendingTask ]: begin
+      });
+      axios.get(`${BUY_URL_PLAYER2}`)
+      .then(response => {
+        // alert(response.data.result);
+        axios.get(`${BOARD_URL}`)
+        .then(response => {
+          dispatch({
+            type: BOARD_TEST,
+            [ pendingTask ]: end,
+            payload: response.data
+          });
+        })
+      })
+      .catch(response => {
+      });
+    }
+  }
+}
+
+export function passApi(inputPlayer) {
+  return function(dispatch) {
+    if (inputPlayer==="P1") {
+      dispatch({
+        type: FETCH_BOARD,
+        [ pendingTask ]: begin
+      });
+      axios.get(`${PASS_URL}`)
+      .then(response => {
+        // alert(response.data.result);
+        axios.get(`${BOARD_URL}`)
+        .then(response => {
+          dispatch({
+            type: BOARD_TEST,
+            [ pendingTask ]: end,
+            payload: response.data
+          });
+        })
+      })
+      .catch(response => {
+      });
+    }else if (inputPlayer==="P2") {
+      dispatch({
+        type: FETCH_BOARD,
+        [ pendingTask ]: begin
+      });
+      axios.get(`${PASS_URL_PLAYER2}`)
+      .then(response => {
+        // alert(response.data.result);
+        axios.get(`${BOARD_URL}`)
+        .then(response => {
+          dispatch({
+            type: BOARD_TEST,
+            [ pendingTask ]: end,
+            payload: response.data
+          });
+        })
+      })
+      .catch(response => {
+      });
+    }
   }
 }

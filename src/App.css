@@ -44,7 +44,7 @@ body {
 }
 .board-info {
   width: 280px;
-  height: 850px;
+  height: 870px;
   background-color: #ffcc66;
 }
 .card-logo {
@@ -329,6 +329,30 @@ body {
   left: 530px;
 }
 
-.dog{
-  
+#nprogress .peg {
+  box-shadow: 1 1 5px #f4590a, 0 0 12px #00acc1 !important;
+  background-color: #80d8ff !important;
+  /*height: 10px !important;*/
+  width: 68% !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #f4590a;
+  border-left-color: #f4590a;
+  width: 90px !important;
+  height: 90px !important;
+}
+.player-turn-1 {
+  font-size: 20px;
+  display: inline;
+  background-color: #ff1744;
+  color: white;
+  margin-bottom: 10px;
+}
+.player-turn-2 {
+  font-size: 20px;
+  display: inline;
+  background-color: #2196f3;
+  color: white;
+  margin-bottom: 10px;
 }
