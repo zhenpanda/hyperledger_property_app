@@ -4,10 +4,21 @@
 
 .start-btn {
   margin-top: 10px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
 }
-.start-text{
-  font-size: 18px;
+.start-text {
+  font-size: 28px;
+  color: white;
+  text-align: center;
+}
+.start-text:hover {
+  text-decoration: none;
   color: pink;
+  cursor: pointer;
 }
 .waiter {
   margin: auto;
@@ -33,7 +44,7 @@ body {
 }
 .board-info {
   width: 280px;
-  height: 720px;
+  height: 850px;
   background-color: #ffcc66;
 }
 .card-logo {
@@ -94,12 +105,28 @@ body {
   line-height: 1.25;
 }
 
-.player {
-  margin-top: 15px;
+.tablow {
+  margin: 0;
+}
+.player1 {
+  margin-top: 12px;
   margin-left: 5px;
   margin-right: 5px;
-  height: 120px;
-  background-color: white;
+  height: 60px;
+  background-color: #ef5350 ;
+}
+.player2 {
+  margin-top: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 60px;
+  background-color: #1e88e5;
+}
+
+.player-action-label{
+  margin-left: 12px;
+  margin-top: 8px;
+  color: grey;
 }
 .player-plate {
   margin: auto;
@@ -108,6 +135,7 @@ body {
   width: 55%;
 }
 .plays-action {
+  margin-top: -27px;
   float: left;
 }
 .btn-img {
@@ -120,12 +148,18 @@ body {
 }
 
 .refresh {
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
   margin-right: 10px;
   margin-bottom: 5px;
 }
-
+.refresh-board {
+  font-size: 10px;
+  width: 100%;
+}
+.refresh-board:hover {
+  cursor: pointer;
+}
 /* Player Positions */
 .player-icon {
   position: absolute;;
@@ -293,4 +327,8 @@ body {
 .pos-40 {
   top: 540px;
   left: 530px;
+}
+
+.dog{
+  
 }

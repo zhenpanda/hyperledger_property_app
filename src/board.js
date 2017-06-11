@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PlayerOneIcon from './player_one_icon';
 import PlayerTwoIcon from './player_two_icon';
+import {Spinner,pendingTasksReducer,pendingTask,begin,end} from 'react-redux-spinner';
 
 import * as actions from './actions/index';
 
 class Board extends Component {
   rollDice(){
     this.props.rollApi();
-    alert("Sending roll request to Hyperledger please wait...");
+    // alert("Sending roll request to Hyperledger please wait...");
   }
   getBoard() {
     this.props.boardApi();
@@ -71,6 +72,65 @@ class Board extends Component {
       }
     }
   }
+  renderPlayerPlayer2() {
+    console.log(this.props.board.current_board);
+    if (this.props.board.current_board) {
+      let pos = this.props.board.current_board.player2.currentPosition.id;
+      switch (pos) {
+        case 1: return(<a className="btn btn-floating btn-large blue pulse pos-one"><img className="blue darken-3 dog" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 2: return(<a className="btn btn-floating btn-large blue pulse pos-two"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 3: return(<a className="btn btn-floating btn-large blue pulse pos-three"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 4: return(<a className="btn btn-floating btn-large blue pulse pos-four"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 5: return(<a className="btn btn-floating btn-large blue pulse pos-five"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 6: return(<a className="btn btn-floating btn-large blue pulse pos-six"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 7: return(<a className="btn btn-floating btn-large blue pulse pos-seven"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 8: return(<a className="btn btn-floating btn-large blue pulse pos-eight"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 9: return(<a className="btn btn-floating btn-large blue pulse pos-nine"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 10: return(<a className="btn btn-floating btn-large blue pulse pos-ten"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 11: return(<a className="btn btn-floating btn-large blue pulse pos-11"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+
+        case 12: return(<a className="btn btn-floating btn-large blue pulse pos-12"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 13: return(<a className="btn btn-floating btn-large blue pulse pos-13"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 14: return(<a className="btn btn-floating btn-large blue pulse pos-14"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 15: return(<a className="btn btn-floating btn-large blue pulse pos-15"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 16: return(<a className="btn btn-floating btn-large blue pulse pos-16"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 17: return(<a className="btn btn-floating btn-large blue pulse pos-17"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 18: return(<a className="btn btn-floating btn-large blue pulse pos-18"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 19: return(<a className="btn btn-floating btn-large blue pulse pos-19"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 20: return(<a className="btn btn-floating btn-large blue pulse pos-20"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+
+        case 21: return(<a className="btn btn-floating btn-large blue pulse pos-21"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 22: return(<a className="btn btn-floating btn-large blue pulse pos-22"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 23: return(<a className="btn btn-floating btn-large blue pulse pos-23"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 24: return(<a className="btn btn-floating btn-large blue pulse pos-24"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 25: return(<a className="btn btn-floating btn-large blue pulse pos-25"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 26: return(<a className="btn btn-floating btn-large blue pulse pos-26"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 27: return(<a className="btn btn-floating btn-large blue pulse pos-27"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 28: return(<a className="btn btn-floating btn-large blue pulse pos-28"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 29: return(<a className="btn btn-floating btn-large blue pulse pos-29"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 30: return(<a className="btn btn-floating btn-large blue pulse pos-30"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+
+        case 31: return(<a className="btn btn-floating btn-large blue pulse pos-31"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 32: return(<a className="btn btn-floating btn-large blue pulse pos-32"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 33: return(<a className="btn btn-floating btn-large blue pulse pos-33"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 34: return(<a className="btn btn-floating btn-large blue pulse pos-34"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 35: return(<a className="btn btn-floating btn-large blue pulse pos-35"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 36: return(<a className="btn btn-floating btn-large blue pulse pos-36"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 37: return(<a className="btn btn-floating btn-large blue pulse pos-37"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 38: return(<a className="btn btn-floating btn-large blue pulse pos-38"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 39: return(<a className="btn btn-floating btn-large blue pulse pos-39"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+        case 40: return(<a className="btn btn-floating btn-large blue pulse pos-40"><img className="blue darken-3" src={require('../assets/images/playerTwo.png')} /></a>)
+
+        default:
+          return(
+            <a className="btn btn-floating btn-large blue pulse pos-one">
+              <img className="blue darken-3" src={require('../assets/images/playerTwo.png')} />
+            </a>
+          )
+          break;
+      }
+    }
+  }
 
   getHash() {
     if (this.props.board.current_board) {
@@ -96,7 +156,7 @@ class Board extends Component {
 
   playerOneBuy() {
     this.props.buyApi();
-    alert("Sending buy request to Hyperledger please wait...")
+    // alert("Sending buy request to Hyperledger please wait...")
   }
 
   componentWillMount() {
@@ -104,16 +164,20 @@ class Board extends Component {
   }
 
   render() {
-    console.log('props in App', this.props.board);
-    alert("Updating....");
+    console.log('rendering props in App', this.props.board);
+    // alert("Updating....");
     return (
       <div>
+        <Spinner />
+
         <div className="row">
 
           <div className="board-frame col-xs-8">
 
             <div className="board-style z-depth-3">
-
+              <div className="player-icon">
+                {this.renderPlayerPlayer2()}
+              </div>
               <div className="player-icon">
                 {this.renderPlayerPlayer1()}
               </div>
@@ -183,11 +247,11 @@ class Board extends Component {
 
                 <div className="card-content">
                   <span className="card-title">
-                  <img className="card-logo card-panel light-green hoverable" src={require('../assets/images/logo.png')} />
+                  <img className="card-logo card-panel light-green" src={require('../assets/images/logo.png')} />
                   </span>
 
                   <div className="player-stats">
-                    <div className="card-content card-panel blue lighten-1 hoverable">
+                    <div className="card-content card-panel blue lighten-1">
 
                       <div className="collection hash-panel">
                         <a href="#!" className="collection-item">
@@ -225,34 +289,52 @@ class Board extends Component {
 
           </div>
 
-          <div className="red accent-2 player-plate hoverable">
-            <span className="player-name flow-text" onClick={() => this.getBoard()}>
-              <img className="refresh" src={require('../assets/images/refresh.jpg')} />Player1
+          <div className="refresh-board card-content card-panel purple lighten-2 player-plate">
+            <span className="flow-text" onClick={() => this.getBoard()}>
+              <img className="refresh" src={require('../assets/images/refresh.jpg')} />
+              Refresh Game
             </span>
           </div>
 
-            <div className="row">
-              <div className="card-content card-panel player">
-
+            <div className="row tablow">
+              <div className="player-action-label">Player 1 Actions:</div>
+              <div className="card-content card-panel player1">
                   <div className="plays-action hoverable">
                     <div className="btn-style">
                       <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.rollDice()}  src={require('../assets/images/dice_red.png')} />
-
                     </div>
                   </div>
-
                   <div className="plays-action hoverable">
                     <div className="btn-style">
                       <img className="waves-effect waves-light btn roll-btn btn-img" onClick={() => this.playerOneBuy()} src={require('../assets/images/bag.png')} />
                     </div>
                   </div>
-
                   <div className="plays-action hoverable">
                     <div className="btn-style">
                       <img className="waves-effect pink lighten-4 btn roll-btn btn-img" src={require('../assets/images/go.png')} />
                     </div>
                   </div>
+              </div>
+            </div>
 
+            <div className="row tablow">
+              <div className="player-action-label">Player 2 Actions:</div>
+              <div className="card-content card-panel player2">
+                  <div className="plays-action hoverable">
+                    <div className="btn-style">
+                      <img className="waves-effect purple lighten-3 btn roll-btn btn-roll" onClick={() => this.rollDice()}  src={require('../assets/images/dice_red.png')} />
+                    </div>
+                  </div>
+                  <div className="plays-action hoverable">
+                    <div className="btn-style">
+                      <img className="waves-effect waves-light btn roll-btn btn-img" onClick={() => this.playerOneBuy()} src={require('../assets/images/bag.png')} />
+                    </div>
+                  </div>
+                  <div className="plays-action hoverable">
+                    <div className="btn-style">
+                      <img className="waves-effect pink lighten-4 btn roll-btn btn-img" src={require('../assets/images/go.png')} />
+                    </div>
+                  </div>
               </div>
             </div>
 

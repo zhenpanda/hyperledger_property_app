@@ -27,6 +27,8 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
+    "react-redux-loading-bar": "^2.9.1",
+    "react-redux-spinner": "^0.7.2",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
     "redux-form": "^6.6.3",

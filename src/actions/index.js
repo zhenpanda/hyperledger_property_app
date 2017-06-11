@@ -1,6 +1,7 @@
 import axios from 'axios';
 // import { browserHistory } from 'react-router';
-import { FETCH_TEST, BOARD_TEST, ROLL_TEST, BUY_TEST } from './types';
+import { FETCH_TEST, FETCH_BOARD, BOARD_TEST, ROLL_TEST, BUY_TEST } from './types';
+import {Spinner,pendingTasksReducer,pendingTask,begin,end} from 'react-redux-spinner';
 
 // url location of the server
 const ROOT_URL = 'https://monopoly-api.mybluemix.net/';
@@ -9,6 +10,13 @@ const INIT_URL = 'https://monopoly-api.mybluemix.net/board';
 const BOARD_URL = 'https://monopoly-api.mybluemix.net/board';
 const ROLL_URL = 'https://monopoly-api.mybluemix.net/player/roll';
 const BUY_URL = 'https://monopoly-api.mybluemix.net/player/action';
+const PASS_URL = 'https://monopoly-api.mybluemix.net/player/pass';
+
+const ROLL_URL_PLAYER2 = 'https://monopoly-api.mybluemix.net/player/roll2';
+const BUY_URL_PLAYER2 = 'https://monopoly-api.mybluemix.net/player/action2';
+const PASS_URL_PLAYER2 = 'https://monopoly-api.mybluemix.net/player/pass2';
+
+// https://monopoly-api.mybluemix.net/player/start
 
 // make sure server is on when trying to call it!
 export function testApi() {
@@ -26,12 +34,16 @@ export function testApi() {
 
 export function boardApi() {
   return function(dispatch) {
-    console.log("reading game board...");
+    dispatch({
+      type: FETCH_BOARD,
+      [ pendingTask ]: begin
+    });
     axios.get(`${BOARD_URL}`)
       .then(response => {
+        console.log(response);
         dispatch({
-          // console.log(response.data);
           type: BOARD_TEST,
+          [ pendingTask ]: end,
           payload: response.data
         });
       })
@@ -42,14 +54,18 @@ export function boardApi() {
 
 export function rollApi() {
   return function(dispatch) {
+    dispatch({
+      type: FETCH_BOARD,
+      [ pendingTask ]: begin
+    });
     axios.get(`${ROLL_URL}`)
       .then(response => {
-        console.log(response.data.result);
-        alert(response.data.result);
+        // alert(response.data.result);
         axios.get(`${BOARD_URL}`)
           .then(response => {
             dispatch({
               type: BOARD_TEST,
+              [ pendingTask ]: end,
               payload: response.data
             });
           })
@@ -63,10 +79,10 @@ export function buyApi() {
   return function(dispatch) {
     axios.get(`${BUY_URL}`)
       .then(response => {
+        // alert(response.data.result);
         axios.get(`${BOARD_URL}`)
           .then(response => {
             dispatch({
-              // console.log(response.data);
               type: BOARD_TEST,
               payload: response.data
             });

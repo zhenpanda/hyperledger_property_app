@@ -6,8 +6,8 @@ export default class PlayerOneHeader extends Component {
     return (
       <div>
         <Link to="/game">
-          <div className="start-btn">
-            <span className="start-text"> Ready Player One! </span>
+          <div className="start-btn card-logo card-panel teal lighten-2">
+            <div className="start-text">Start Hyperledger Monopoly!</div>
           </div>
         </Link>
       </div>
