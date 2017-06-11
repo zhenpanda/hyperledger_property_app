@@ -18,6 +18,8 @@ const PASS_URL_PLAYER2 = 'https://monopoly-api.mybluemix.net/player/pass2';
 
 // https://monopoly-api.mybluemix.net/player/start
 
+//git push heroku master
+
 // make sure server is on when trying to call it!
 export function testApi() {
   return function(dispatch) {
