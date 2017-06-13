@@ -30,6 +30,6 @@ ReactDOM.render(
     </Router>
   </Provider>,
 document.querySelector('.container'));
-registerServiceWorker();
+// registerServiceWorker();
 
 // <Route path="signin" component={Signin} />

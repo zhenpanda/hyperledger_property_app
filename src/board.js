@@ -177,7 +177,7 @@ class Board extends Component {
   }
 
   // INIT
-  componentWillMount() {
+  componentDidMount() {
     this.getBoard();
   }
 
