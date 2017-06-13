@@ -4,6 +4,7 @@ import { FETCH_TEST, FETCH_BOARD, BOARD_TEST, ROLL_TEST, BUY_TEST } from './type
 import {Spinner,pendingTasksReducer,pendingTask,begin,end} from 'react-redux-spinner';
 
 // url location of the server
+const RESTART_URL = 'https://monopoly-api.mybluemix.net/player/start';
 const ROOT_URL = 'https://monopoly-api.mybluemix.net/';
 const INIT_URL = 'https://monopoly-api.mybluemix.net/board';
 

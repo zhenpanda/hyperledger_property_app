@@ -152,11 +152,11 @@ class Board extends Component {
     if (this.props.board.current_board) {
       if (this.props.board.current_board.currentTurn == "player1") {
         return(
-          <div className="player-turn-1">{this.props.board.current_board.currentTurn}</div>
+          <div className="waves-effect waves-light btn player-turn-1">{this.props.board.current_board.currentTurn}</div>
         )
       }else if (this.props.board.current_board.currentTurn == "player2") {
         return(
-          <div className="player-turn-2">{this.props.board.current_board.currentTurn}</div>
+          <div className="waves-effect waves-light btn player-turn-2">{this.props.board.current_board.currentTurn}</div>
         )
       }
     }
@@ -175,6 +175,64 @@ class Board extends Component {
       )
     }
   }
+  getBoardInfo() {
+    if (this.props.board.current_board) {
+      // <div className="player-propty">
+      // {this.props.board.current_board.player2.positions[0].id}
+      // </div>
+      // console.log(this.props.board.current_board.player1.positions);
+      let moneyP = [];
+      let dogeP = [];
+      if (this.props.board.current_board.player1.positions) this.props.board.current_board.player1.positions.map((o)=>{moneyP.push(o.name)});
+      if (this.props.board.current_board.player2.positions) this.props.board.current_board.player2.positions.map((op)=>{dogeP.push(op.name)});
+
+      function tableDisplay(m,d) {
+        let trArr = [];
+        let longerArrOwner;
+        let longerArr;
+        if (m.length > d.length) {
+          longerArr = m;
+          longerArrOwner = 'money';
+        }else{
+          longerArr = d;
+          longerArrOwner = 'dog';
+        }
+        longerArr.map((c,i,a)=>{
+          let mp = '';
+          let dp = '';
+          if (m[i]) mp = m[i];
+          if (d[i]) dp = d[i];
+          trArr.push([m[i],d[i]]);
+        })
+        return trArr;
+      };
+      let trArrRes = tableDisplay(moneyP, dogeP);
+
+      return(
+        <div>
+          <table className="responsive-table">
+            <thead>
+              <tr>
+                  <th>MoneyDude Property</th>
+                  <th>Doge Property</th>
+              </tr>
+            </thead>
+
+          <tbody>
+            {trArrRes.map((r)=>{
+              return <tr key={r}>
+                {r.map((e)=>{
+                  return <td key={e}>{e}</td>;
+                })}
+              </tr>
+            })}
+          </tbody>
+        </table>
+
+      </div>
+      )
+    }
+  }
 
   // INIT State
   componentDidMount() {
@@ -190,9 +248,11 @@ class Board extends Component {
         <Spinner />
 
         <div className="row main-board">
-
           <div className="board-frame col-xs-8">
-            <div>Current Turn: {this.getTurn()}</div>
+            <div className="waves-effect waves-light btn">Start New Game</div>
+            <div className="card-content card-panel  pink lighten-4 turn">
+              Current Turn:  {this.getTurn()}
+            </div>
             <div className="board-style z-depth-3">
               <div className="player-icon">
                 {this.renderPlayerPlayer2()}
@@ -257,9 +317,13 @@ class Board extends Component {
               <img className="street-block hoverable" src={require('../assets/images/cut_board/board_cutted_41.png')} />
 
             </div>
-          </div>
-          <div className="board-info col-xs-3">
 
+            <div>
+              <div>{this.getBoardInfo()}</div>
+            </div>
+          </div>
+
+          <div className="board-info col-xs-3">
           <div className="row">
             <div className="col-xs-12 card-top">
               <div className="card card-style">
@@ -360,6 +424,7 @@ class Board extends Component {
           </div>
 
         </div>
+
       </div>
     );
   }
