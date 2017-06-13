@@ -176,7 +176,7 @@ class Board extends Component {
     }
   }
 
-  // INIT
+  // INIT State
   componentDidMount() {
     this.getBoard();
   }
@@ -186,9 +186,10 @@ class Board extends Component {
     // alert("Updating....");
     return (
       <div>
+
         <Spinner />
 
-        <div className="row">
+        <div className="row main-board">
 
           <div className="board-frame col-xs-8">
             <div>Current Turn: {this.getTurn()}</div>

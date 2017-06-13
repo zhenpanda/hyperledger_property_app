@@ -20,16 +20,12 @@ import reducers from './reducers';
 // create a store by using applyMiddleware function
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
-// react renders the DOM using redux middleware, rendering the App(root) component
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory} >
-      <Route path="/" component={App}>
-        <Route path="game" component={Board} />
+      <Route path="/" component={Board}>
+        // <Route path="game" component={Board} />
       </Route>
     </Router>
   </Provider>,
 document.querySelector('.container'));
-// registerServiceWorker();
-
-// <Route path="signin" component={Signin} />
