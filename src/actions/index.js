@@ -35,6 +35,29 @@ export function testApi() {
   }
 }
 
+export function startGameApi() {
+  return function(dispatch) {
+    dispatch({
+      type: FETCH_BOARD,
+      [ pendingTask ]: begin
+    });
+    axios.get(`${RESTART_URL}`)
+    .then(response => {
+      // alert(response.data.result);
+      axios.get(`${BOARD_URL}`)
+      .then(response => {
+        dispatch({
+          type: BOARD_TEST,
+          [ pendingTask ]: end,
+          payload: response.data
+        });
+      })
+    })
+    .catch(response => {
+    });
+  }
+}
+
 export function boardApi() {
   return function(dispatch) {
     dispatch({

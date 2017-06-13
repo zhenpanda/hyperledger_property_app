@@ -234,6 +234,10 @@ class Board extends Component {
     }
   }
 
+  startNewGame() {
+    this.props.startGameApi();
+  }
+
   // INIT State
   componentDidMount() {
     this.getBoard();
@@ -249,7 +253,7 @@ class Board extends Component {
 
         <div className="row main-board">
           <div className="board-frame col-xs-8">
-            <div className="waves-effect waves-light btn">Start New Game</div>
+            <div className="waves-effect waves-light btn" onClick={() => this.startNewGame()}>Start New Game</div>
             <div className="card-content card-panel  pink lighten-4 turn">
               Current Turn:  {this.getTurn()}
             </div>
