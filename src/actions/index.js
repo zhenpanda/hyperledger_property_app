@@ -75,6 +75,11 @@ export function boardApi() {
       })
       .catch(response => {
         console.log("error in fetching board from boardApi");
+        dispatch({
+          type: BOARD_TEST,
+          [ pendingTask ]: end,
+          payload: {}
+        });
       });
   }
 }
