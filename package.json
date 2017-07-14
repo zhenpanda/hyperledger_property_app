@@ -31,6 +31,7 @@
     "react-redux-spinner": "^0.7.2",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
+    "redux-async-initial-state": "^0.2.0",
     "redux-form": "^6.6.3",
     "redux-thunk": "^2.2.0"
   },

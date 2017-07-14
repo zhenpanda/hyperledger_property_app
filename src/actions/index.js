@@ -66,7 +66,7 @@ export function boardApi() {
     });
     axios.get(`${BOARD_URL}`)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         dispatch({
           type: BOARD_TEST,
           [ pendingTask ]: end,
@@ -74,6 +74,7 @@ export function boardApi() {
         });
       })
       .catch(response => {
+        console.log("error in fetching board from boardApi");
       });
   }
 }

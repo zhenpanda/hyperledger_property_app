@@ -1,4 +1,4 @@
-Hyperledger Monopoly Front-End Server
+HyperPropoerty Front-End Server
 
 run: `npm install`
 to get dependencies
